@@ -13,7 +13,7 @@ spec:
         app: nginx-demo
     spec:
       imagePullSecrets:
-        - name: harbor-secret
+        - name: harbor-auth
       containers:
         - name: nginx
           image: harbor-dw.cowave.kr/argocd/nginx:1.28.0
