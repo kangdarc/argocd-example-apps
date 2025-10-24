@@ -4,7 +4,7 @@ metadata:
   name: updater
   namespace: argocd
   annotations:
-    argocd-image-updater.argoproj.io/applications: "updater"
+    argocd-image-updater.argoproj.io/application: "updater"
 spec:
   project: default
   source:
