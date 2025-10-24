@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: updater
+  namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/applications: "updater"
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/kangdarc/argocd-example-apps
+    path: test
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
