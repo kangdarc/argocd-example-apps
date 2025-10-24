@@ -6,7 +6,7 @@ metadata:
   annotations:
     argocd-image-updater.argoproj.io/application: "updater"
     argocd-image-updater.argoproj.io/image-list: "nginx=harbor-dw.cowave.kr/argocd/nginx"
-    argocd-image-updater.argoproj.io/nginx.update-strategy: "latest"
+    argocd-image-updater.argoproj.io/nginx.update-strategy: "semver"
 spec:
   project: default
   source:
