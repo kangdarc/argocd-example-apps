@@ -2,10 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-demo
-  annotations:
-    argocd-image-updater.argoproj.io/image-list: nginx=harbor-dw.cowave.kr/argocd/nginx
-    argocd-image-updater.argoproj.io/nginx.update-strategy: latest
-    argocd-image-updater.argoproj.io/write-back-method: argocd
 spec:
   replicas: 1
   selector:
