@@ -7,6 +7,10 @@ metadata:
     argocd-image-updater.argoproj.io/application: "updater"
     argocd-image-updater.argoproj.io/image-list: "nginx=harbor-dw.cowave.kr/argocd/nginx"
     argocd-image-updater.argoproj.io/nginx.update-strategy: "semver"
+    argocd-image-updater.argoproj.io/nginx.allow-tags: "regexp:^\\d+\\.\\d+\\.\\d+$"
+
+    argocd-image-updater.argoproj.io/write-back-method: "git"
+    argocd-image-updater.argoproj.io/git-branch: "main"
 spec:
   project: default
   source:
