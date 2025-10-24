@@ -4,10 +4,9 @@ metadata:
   name: updater
   namespace: argocd
   annotations:
-    argocd-image-updater.argoproj.io/application: "updater"  # 원래의 어노테이션
-    argocd-image-updater.argoproj.io/image-list: "nginx=harbor-dw.cowave.kr/argocd/nginx"  # 업데이트할 이미지 목록
-    argocd-image-updater.argoproj.io/nginx.update-strategy: "latest"  # 업데이트 전략: latest, or 다른 버전
-    argocd-image-updater.argoproj.io/write-back-method: "argocd"  # 업데이트 후 변경 사항을 Git에 반영
+    argocd-image-updater.argoproj.io/application: "updater"
+    argocd-image-updater.argoproj.io/image-list: "nginx=harbor-dw.cowave.kr/argocd/nginx"
+    argocd-image-updater.argoproj.io/nginx.update-strategy: "latest"
 spec:
   project: default
   source:
@@ -17,3 +16,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
