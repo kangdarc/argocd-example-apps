@@ -23,3 +23,5 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           ports:
             - containerPort: 80
+      imagePullSecrets:
+        - name: {{ .Values.imagePullSecret }}
