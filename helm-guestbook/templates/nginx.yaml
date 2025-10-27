@@ -1,21 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-demo
+  name: {{ .Release.Name }}-nginx
 spec:
-  replicas: 1
+  replicas: {{ .Values.nginx.replicaCount }}
   selector:
     matchLabels:
-      app: nginx-demo
+      app: nginx
   template:
     metadata:
       labels:
-        app: nginx-demo
+        app: nginx
     spec:
       imagePullSecrets:
-        - name: harbor-auth
+        - name: {{ .Values.nginx.imagePullSecret }}
       containers:
         - name: nginx
-          image: harbor-dw.cowave.kr/argocd/nginx:1.28.0
+          image: "{{ .Values.nginx.image.repository }}:{{ .Values.nginx.image.tag }}"
           ports:
             - containerPort: 80
+
