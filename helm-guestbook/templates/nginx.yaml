@@ -13,10 +13,11 @@ spec:
         app: nginx
     spec:
       imagePullSecrets:
-        - name: {{ .Values.nginx.imagePullSecret }}
+{{- range .Values.nginx.image.pullSecrets }}
+        - name: {{ .name }}
+{{- end }}
       containers:
         - name: nginx
           image: "{{ .Values.nginx.image.repository }}:{{ .Values.nginx.image.tag }}"
           ports:
-            - containerPort: 80
-
+            - containerPort: {{ .Values.nginx.containerPort }}
