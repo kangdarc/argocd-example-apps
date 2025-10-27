@@ -1,0 +1,10 @@
+replicaCount: 1
+
+image:
+  repository: harbor-dw.cowave.kr/argocd/nginx
+  tag: "1.28.0"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
