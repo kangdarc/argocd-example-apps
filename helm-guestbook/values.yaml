@@ -5,9 +5,11 @@
 replicaCount: 1
 
 image:
-  repository: gcr.io/google-samples/gb-frontend
-  tag: v5
+  repository: harbor-dw.cowave.kr/argocd/nginx
+  tag: "1.28.0"
   pullPolicy: IfNotPresent
+  pullSecrets:
+    - name: argocd-harbor-secret
 
 containerPort: 80
 
