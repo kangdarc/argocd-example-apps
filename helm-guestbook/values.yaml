@@ -5,8 +5,8 @@ nginx:
     repository: harbor-dw.cowave.kr/argocd/nginx
     tag: "1.28.0"
     pullPolicy: IfNotPresent
-
-  imagePullSecret: argocd-harbor-secret
+    pullSecrets:
+      - name: argocd-harbor-secret
 
   containerPort: 80
 
