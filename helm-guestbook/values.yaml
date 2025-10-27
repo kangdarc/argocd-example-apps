@@ -1,31 +1,28 @@
-nginx:
-  replicaCount: 1
+replicaCount: 1
 
-  image:
-    repository: harbor-dw.cowave.kr/argocd/nginx
-    tag: "1.28.0"
-    pullPolicy: IfNotPresent
-    pullSecrets:
-      - name: argocd-harbor-secret
+image:
+  repository: harbor-dw.cowave.kr/argocd/nginx
+  tag: "1.28.0"
+  pullPolicy: IfNotPresent
+  pullSecrets:
+    - name: argocd-harbor-secret
 
-  containerPort: 80
+containerPort: 80
 
-  service:
-    type: ClusterIP
-    port: 80
+service:
+  type: ClusterIP
+  port: 80
 
-  ingress:
-    enabled: false
-    annotations: {}
-    path: /
-    hosts:
-      - chart-example.local
-    tls: []
+ingress:
+  enabled: false
+  hosts:
+    - chart-example.local
+  annotations: {}
+  path: /
+  tls: []
 
-  resources: {}
+resources: {}
 
-  nodeSelector: {}
-
-  tolerations: []
-
-  affinity: {}
+nodeSelector: {}
+tolerations: []
+affinity: {}
