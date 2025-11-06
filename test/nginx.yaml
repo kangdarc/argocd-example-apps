@@ -1,21 +1,15 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Pod
 metadata:
-  name: nginx-demo
+  name: my-nginx
+  namespace: argocd
+  labels:
+    app: nginx
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: nginx-demo
-  template:
-    metadata:
-      labels:
-        app: nginx-demo
-    spec:
-      imagePullSecrets:
-        - name: argo-secret
-      containers:
-        - name: nginx
-          image: harbor-dw.cowave.kr/argocd-dev/nginx:1.29.0
-          ports:
-            - containerPort: 80
+  containers:
+    - name: nginx
+      image: harbor-dw.cowave.kr/argocd-dev/nginx
+      ports:
+        - containerPort: 80
+  imagePullSecrets:
+    - name: argo-secret
