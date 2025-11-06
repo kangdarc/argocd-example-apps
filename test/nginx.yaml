@@ -8,7 +8,7 @@ metadata:
 spec:
   containers:
     - name: nginx
-      image: harbor-dw.cowave.kr/argocd-dev/nginx
+      image: harbor-dw.cowave.kr/argocd-dev/nginx:1.28.0
       ports:
         - containerPort: 80
   imagePullSecrets:
