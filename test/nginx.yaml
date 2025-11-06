@@ -16,6 +16,6 @@ spec:
         - name: harbor-auth
       containers:
         - name: nginx
-          image: harbor-dw.cowave.kr/argocd/nginx:1.28.0
+          image: harbor-dw.cowave.kr/argocd-dev/nginx:1.28.0
           ports:
             - containerPort: 80
