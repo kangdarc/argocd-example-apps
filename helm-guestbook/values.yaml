@@ -2,7 +2,7 @@ nginx:
   replicaCount: 1
 
   image:
-    repository: harbor-dw.cowave.kr/argocd-dev/nginx
+    repository: harbor-dw.cowave.kr/argocd/nginx
     tag: "1.28.0"
     pullPolicy: IfNotPresent
     pullSecrets:
@@ -27,5 +27,3 @@ resources: {}
 nodeSelector: {}
 tolerations: []
 affinity: {}
-redis:
-  host: ""
