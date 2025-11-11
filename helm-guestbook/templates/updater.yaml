@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
   annotations:
     argocd-image-updater.argoproj.io/application: "updater"
-    argocd-image-updater.argoproj.io/image-list: "nginx=harbor-dw.cowave.kr/argocd/nginx"
+    argocd-image-updater.argoproj.io/image-list: "nginx=harbor-dw.cowave.kr/argocd-dev/nginx"
     argocd-image-updater.argoproj.io/nginx.update-strategy: "semver"
     argocd-image-updater.argoproj.io/nginx.allow-tags: "regexp:^\\d+\\.\\d+\\.\\d+$"
 
