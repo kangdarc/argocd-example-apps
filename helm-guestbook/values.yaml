@@ -27,3 +27,5 @@ resources: {}
 nodeSelector: {}
 tolerations: []
 affinity: {}
+redis:
+  host: ""
