@@ -1,13 +1,13 @@
 nginx:
-  replicaCount: 1
-
   image:
     repository: harbor-dw.cowave.kr/argocd/nginx
     tag: "1.28.0"
     pullPolicy: IfNotPresent
     pullSecrets:
       - name: argo-secret
-
+      
+  replicaCount: 1
+  
   containerPort: 80
 
 service:
